@@ -1,4 +1,7 @@
 import React from "react";
+import img1 from '../assets/journal_insighs_1.jpg'
+import img2 from '../assets/journal_insighs_2.jpg'
+import img3 from '../assets/journal_insighs_3.jpg'
 
 function LatestBlogs() {
   return (
@@ -17,7 +20,7 @@ function LatestBlogs() {
           {/* Card 1 */}
           <div className="bg-white/80   rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition">
             <img
-              src="https://images.unsplash.com/photo-1517842645767-c639042777db"
+              src={img1}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
@@ -40,7 +43,7 @@ function LatestBlogs() {
           {/* Card 2 */}
           <div className="bg-white/80   rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition">
             <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+              src={img2}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
@@ -63,7 +66,7 @@ function LatestBlogs() {
           {/* Card 3 */}
           <div className="bg-white/80   rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition">
             <img
-              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+              src={img3}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">

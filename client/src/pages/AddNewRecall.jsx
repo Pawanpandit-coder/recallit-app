@@ -118,7 +118,7 @@ function AddNewRecall() {
           </div>
 
           {/* File Upload */}
-          <div className="w-full border border-dashed border-gray-300 rounded-lg p-3 bg-white/60 text-center text-sm text-gray-500">
+          {/* <div className="w-full border border-dashed border-gray-300 rounded-lg p-3 bg-white/60 text-center text-sm text-gray-500">
             <input
               type="file"
               name="file"
@@ -127,7 +127,7 @@ function AddNewRecall() {
               value={form.file}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
 
           {/* Button */}
           <button

@@ -7,9 +7,8 @@ export const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
     const hashPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({ name, email, password: hashPassword });
-    return res
-      .status(200)
-      .json({ message: "user created successfully.", name: newUser.name });
+    const token = generateToken(newUser._id);
+    return res.status(200).json({ token, name: newUser.name });
   } catch (err) {
     console.error(err);
   }
@@ -25,7 +24,6 @@ export const loginUser = async (req, res) => {
     const matched = await bcrypt.compare(password, user.password);
     if (matched) {
       const token = generateToken(user._id);
-      console.log(token)
       return res.status(200).json({ token, name: user.name });
     } else {
       return res.status(401).json({ message: "❗Password did't match" });

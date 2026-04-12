@@ -7,6 +7,9 @@ import auth from "./routes/authRoute.js";
 import recall from "./routes/recallRoute.js";
 dotenv.config();
 
+import dns from 'dns'
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+
 const app = express();
 
 app.use(

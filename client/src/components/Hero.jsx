@@ -1,4 +1,5 @@
 import React from "react";
+import heroImg from '../assets/landing_img.jpg'
 
 function Hero() {
   return (
@@ -40,7 +41,7 @@ function Hero() {
         {/* Right Image */}
         <div className="flex justify-center">
           <img
-            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+            src={heroImg}
             alt="journal productivity"
             className="rounded-2xl shadow-xl w-full max-w-md hover:scale-105 transition duration-300"
           />
