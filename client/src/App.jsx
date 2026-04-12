@@ -7,7 +7,7 @@ import JournelPage from "./pages/jounelPage";
 import Recall from "./pages/Recall";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import AddNewRecall from "./pages/addNewRecall";
+import AddNewRecall from "./pages/AddNewRecall";
 import Layout from "./pages/Layout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
