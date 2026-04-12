@@ -1,0 +1,42 @@
+# node modules
+node_modules/
+
+# env files
+.env*
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# build folders
+dist/
+build/
+
+# cache
+.cache/
+.next/
+.vite/
+
+# IDE files
+.vscode/
+.idea/
+
+# temp files
+*.tmp
+*.temp
+
+# coverage
+coverage/
+
+# uploads (optional)
+uploads/
+
+# demo files
+demo.js
