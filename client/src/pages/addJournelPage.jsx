@@ -40,7 +40,8 @@ function AddJournelPage() {
           },
         },
       );
-      alert("journel added");
+      setTitle('')
+      setContent('')
     } catch (err) {
       console.error(err);
     }finally{
@@ -64,6 +65,7 @@ function AddJournelPage() {
             type="text"
             name="title"
             id="title"
+            value={title}
             placeholder="Title of Journal..."
             className="w-full bg-transparent border-b border-gray-300 focus:border-purple-400 focus:outline-none px-2 py-2 text-lg placeholder-gray-400 transition-all"
             onChange={(e) => setTitle(e.target.value)}
