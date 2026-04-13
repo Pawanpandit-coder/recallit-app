@@ -2,8 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isTokenExpired } from "../auth/auth";
+import { useLoader } from "../context/LoaderContext";
 
 function JournelPage() {
+
+  const {setLoading} = useLoader();
+
   const data = localStorage.getItem("data");
   const token = JSON.parse(data).token;
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -20,6 +24,7 @@ function JournelPage() {
       return;
     }
     try {
+      setLoading(true)
       const res = await axios.get(`${apiUrl}/journel?page=${pageNum}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -32,6 +37,8 @@ function JournelPage() {
       }
     } catch (err) {
       console.error(err);
+    }finally{
+      setLoading(false)
     }
   };
 

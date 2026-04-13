@@ -4,6 +4,7 @@ import { isTokenExpired } from "../auth/auth";
 import { useNavigate } from "react-router-dom";
 
 function AddJournelPage() {
+  const [loading, setLoading] = useState(false)
   const data = localStorage.getItem("data");
   const token = JSON.parse(data).token;
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ function AddJournelPage() {
       return;
     }
     try {
+      setLoading(true)
       const res = await axios.post(
         `${apiUrl}/journel`,
         {
@@ -41,6 +43,8 @@ function AddJournelPage() {
       alert("journel added");
     } catch (err) {
       console.error(err);
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -48,7 +52,7 @@ function AddJournelPage() {
     <div className="flex justify-start items-center flex-col p-4">
       <div className="w-full max-w-2xl bg-white/80 border rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col gap-6">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 text-center">
-          Write your day
+          Write your day 🎃
         </h1>
 
         <p className="text-sm text-gray-500 text-center">
@@ -98,10 +102,14 @@ function AddJournelPage() {
         </div>
 
         <button
-          className="bg-linear-to-r from-purple-400 to-blue-400 text-white rounded-full px-6 py-2 shadow-md hover:scale-105 transition-all duration-200 w-full sm:w-auto"
+        disabled= {loading}
+          className="bg-linear-to-r flex justify-center items-center from-purple-400 to-blue-400 text-white rounded-full px-6 py-2 shadow-md hover:scale-105 transition-all duration-200 w-full sm:w-auto"
           onClick={addJournel}
         >
           Save Journal
+          {loading && (
+            <span className="w-4 h-4 border-3 align-middle mx-1 border-white border-t-transparent rounded-full animate-spin inline-block"></span>
+          )}
         </button>
       </div>
     </div>

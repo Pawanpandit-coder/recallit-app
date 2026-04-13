@@ -134,7 +134,7 @@ const Navbar = () => {
         {showProfile && (
           <div
             ref={profileRef} // ✅ fixed
-            className="flex flex-col border-gray-300 bg-white rounded border absolute top-18 md:right-12 right-4 min-w-24 px-2 py-1 justify-center items-start text-start shadow-xl cursor-pointer"
+            className="flex flex-col border-gray-300 bg-white rounded border absolute top-18 md:right-12 right-4 min-w-24 px-2 py-1 justify-center items-start text-start shadow-xl cursor-pointer md:cursor-default"
           >
             <span>Profile</span>
             <span>Setting</span>

@@ -14,10 +14,14 @@ import RegisterPage from "./pages/RegisterPage";
 import RegistrationSuccess from "./pages/RegistrationSuccess";
 import PrivateRoute from "./routes/PrivateRoute";
 import { LoginProvider } from "./context/LoginContext";
+import { useLoader } from "./context/LoaderContext";
+import Loader from "./components/Loader";
 
 function App() {
+  const { loading } = useLoader();
   return (
     <>
+      {loading && <Loader />}
       <BrowserRouter>
         <LoginProvider>
           <Routes>

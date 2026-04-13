@@ -41,11 +41,11 @@ export default function SignUp() {
       });
 
       const userData = {
-        name:response.data.name,
-        token:response.data.token
-      }
+        name: response.data.name,
+        token: response.data.token,
+      };
 
-      localStorage.setItem('data',JSON.stringify(userData))
+      localStorage.setItem("data", JSON.stringify(userData));
 
       // optional: reset form
       setForm({
@@ -162,16 +162,16 @@ export default function SignUp() {
               className="w-full bg-linear-to-r from-purple-500 to-blue-500 text-white py-2.5 rounded-lg font-medium hover:opacity-90 transition"
             >
               {loading ? "Creating account..." : "Sign Up"}
+              {loading && (
+                <span className="w-4 h-4 border-3 align-middle mx-1 border-white border-t-transparent rounded-full animate-spin inline-block"></span>
+              )}
             </button>
           </form>
 
           {/* Footer */}
           <p className="text-center text-sm text-gray-600 mt-6">
             Already have an account?{" "}
-            <Link
-              to="/auth/login"
-              className="text-purple-600 hover:underline"
-            >
+            <Link to="/auth/login" className="text-purple-600 hover:underline">
               Sign in
             </Link>
           </p>

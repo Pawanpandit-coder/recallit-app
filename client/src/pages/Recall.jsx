@@ -3,8 +3,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { isTokenExpired } from "../auth/auth";
+import { useLoader } from "../context/LoaderContext";
 
 function Recall() {
+  const { setLoading } = useLoader();
+
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -28,6 +31,7 @@ function Recall() {
     }
 
     try {
+      setLoading(true);
       const response = await axios.get(`${apiUrl}/recall`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -36,6 +40,8 @@ function Recall() {
       setTasks(response.data);
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 

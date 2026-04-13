@@ -44,6 +44,7 @@ export default function SignIn() {
     }
 
     try {
+      setLoading(true);
       const response = await axios.post(
         `${apiUrl}/auth/login`,
         {
@@ -160,7 +161,10 @@ export default function SignIn() {
               disabled={loading}
               className="w-full bg-linear-to-r from-purple-500 to-blue-500 text-white py-2.5 rounded-lg font-medium hover:opacity-90 transition"
             >
-              {loading ? "Signing in..." : "Sign In"}
+              Sign In
+              {loading && (
+                <span className="w-4 h-4 border-3 align-middle mx-1 border-white border-t-transparent rounded-full animate-spin inline-block"></span>
+              )}
             </button>
           </form>
 
